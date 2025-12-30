@@ -6,7 +6,7 @@ import { View, Text } from '@/components/Themed';
 export default function TabOneScreen() {
   return (
     <View style={styles.container}>
-      <Text className="text-red-50 text-5xl font-bold">Home</Text>
+      <Text style={styles.title}>Home</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
       <EditScreenInfo path="app/(tabs)/index.tsx" />
     </View>
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   title: {
-    fontSize: 90,
+    fontSize: 30,
     fontWeight: 'bold',
   },
   separator: {
