@@ -3,12 +3,13 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { homeStyles } from "./styles";
 import WelcomeCard from "./components/WelcomeCard";
 import HomeOptions from "./components/OptionsCard";
+import PreviousTransfers from "./components/PreviousTransfers";
 import { useRouter } from "expo-router";
 
 export default function HomeScreen(){
     const router = useRouter();
     return(
-         <SafeAreaView style={{ flex: 1}} >
+         <SafeAreaView >
 
           <View >
 
@@ -25,6 +26,10 @@ export default function HomeScreen(){
           <View>
             <HomeOptions/>
           </View> 
+
+          <View>
+            <PreviousTransfers/>
+          </View>
           
           </View>
         </SafeAreaView>
