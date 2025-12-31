@@ -9,8 +9,7 @@ import { useRouter } from "expo-router";
 export default function HomeScreen(){
     const router = useRouter();
     return(
-         <SafeAreaView >
-
+         <SafeAreaView  edges={['left', 'right', 'bottom']}>
           <View >
 
           <View>

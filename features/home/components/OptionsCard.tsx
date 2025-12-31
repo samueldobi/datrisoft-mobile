@@ -7,21 +7,21 @@ export default function HomeOptions() {
 
       <Pressable style={styles.option}>
         <View style={styles.iconCircle}>
-          <FontAwesome5 name="dollar-sign" size={18} color="#1dcf7c" />
+          <FontAwesome5 name="dollar-sign" size={25} color="#1dcf7c" />
         </View>
-        <Text style={styles.label}>Currency Exchange</Text>
+        <Text style={styles.label}>Currency Swap</Text>
       </Pressable>
 
       <Pressable style={styles.option}>
         <View style={styles.iconCircle}>
-          <FontAwesome5 name="exchange-alt" size={18} color="#1dcf7c" />
+          <FontAwesome5 name="exchange-alt" size={25} color="#1dcf7c" />
         </View>
         <Text style={styles.label}>Single Transfer</Text>
       </Pressable>
 
       <Pressable style={styles.option}>
         <View style={styles.iconCircle}>
-          <FontAwesome5 name="wallet" size={18} color="#1dcf7c" />
+          <FontAwesome5 name="wallet" size={25} color="#1dcf7c" />
         </View>
         <Text style={styles.label}>Multi Transfer</Text>
       </Pressable>

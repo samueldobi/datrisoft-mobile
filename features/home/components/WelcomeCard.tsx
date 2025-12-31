@@ -1,9 +1,10 @@
 import React from 'react';
-import { View, Text, StyleSheet,Pressable } from 'react-native';
+import { View, Text, StyleSheet,Pressable,Image } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 
 type WelcomeCardProps = {
   name: string;
+  avatarUri?: string;
   subtitle?: string;
   balance?:number;
   onPressTransfers?: ()=>void;
@@ -13,18 +14,30 @@ type WelcomeCardProps = {
 export default function WelcomeCard({
   name ,
   subtitle,
+  avatarUri,
   balance,
   onPressTransfers,
   onPressSeeHistory,
 }: WelcomeCardProps) {
   return (
-    <View style={styles.card}>
+    <View>
+
+   <View style={styles.welcomeBox}>
+      <Text style={styles.welcomeTextTop}>Welcome, {name}</Text>
+      <View style={styles.avatarCircle}>
+        <FontAwesome name= 'user-plus' size={20} color="#fff" />
+      </View>
+      
+    
+    </View>
+
+
+       <View style={styles.card}>
       <View style={styles.row}>
         
         <View style={styles.textContainer}>
-          <Text style={styles.title}>Welcome, {name}</Text>
           <Text style={styles.subtitle}>{subtitle}</Text>
-          <Text style={styles.subtitle}>₦{balance}</Text>
+          <Text style={styles.balanceText}>₦{balance}</Text>
         </View>
 
         <View>
@@ -45,6 +58,10 @@ export default function WelcomeCard({
         
       </View>
     </View>
+
+ 
+    </View>
+   
   );
 }
 
@@ -74,13 +91,18 @@ const styles = StyleSheet.create({
     color:'#fff',
   },
   subtitle: {
-    fontSize: 14,
+    fontSize: 18,
     color:'#fff',
-    marginTop:5,
+    marginVertical:5,
+  },
+  balanceText: {
+    fontSize: 24,
+    color:'#fff',
+    marginVertical:5,
   },
   transferText:{
     color:'#fff',
-    fontSize:15,
+    fontSize:18,
     padding:5,
     margin:3,
   },
@@ -93,6 +115,48 @@ const styles = StyleSheet.create({
   icons:{
     fontSize:10,
     padding:10,
-    // marginRight:15,
-  }
+  },
+
+
+  // card container for welcome name
+   welcomeBox: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginVertical: 16,
+    paddingLeft:10,
+    paddingRight:10,
+  },
+  avatarCircle: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    backgroundColor: '#1dcf7c',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginRight: 10,
+  },
+  avatar: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    marginRight: 10,
+  },
+  placeholder: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    backgroundColor: '#1dcf7c',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginRight: 10,
+  },
+  placeholderText: {
+    color: 'white',
+    fontWeight: '600',
+  },
+  welcomeTextTop: {
+    fontSize: 20,
+    fontWeight: '500',
+    color: '#111827',
+  },
 });

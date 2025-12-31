@@ -5,6 +5,7 @@ import { Pressable } from 'react-native';
 import Colors from '@/constants/Colors';
 import { useColorScheme } from '@/components/useColorScheme';
 import { useClientOnlyValue } from '@/components/useClientOnlyValue';
+import { FontAwesome5 } from '@expo/vector-icons';
 
 
 function TabBarIcon(props: {
@@ -20,9 +21,11 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        // tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         // Disable the static render of the header on web
         // to prevent a hydration error in React Navigation v6.
+        tabBarActiveTintColor: '#1dcf7c',   
+        tabBarInactiveTintColor: '#9CA3AF',
         headerShown: (false),
         
       }}>
@@ -48,10 +51,10 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="two"
+        name="transfers"
         options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          title: 'Transfers',
+          tabBarIcon: ({ color }) => <TabBarIcon name="arrow-right" color={color} />,
         }}
       />
     </Tabs>
