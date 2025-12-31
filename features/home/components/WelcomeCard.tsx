@@ -1,19 +1,21 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image,TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Image,Pressable } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 
 type WelcomeCardProps = {
   name: string;
   subtitle?: string;
   balance?:number;
-  onPressButton?: ()=>void;
+  onPressTransfers?: ()=>void;
+  onPressSeeHistory?: ()=>void;
 };
 
 export default function WelcomeCard({
-  name = 'User',
-  subtitle = 'Available Balance:',
+  name ,
+  subtitle,
   balance,
-  onPressButton,
+  onPressTransfers,
+  onPressSeeHistory,
 }: WelcomeCardProps) {
   return (
     <View style={styles.card}>
@@ -22,18 +24,23 @@ export default function WelcomeCard({
         <View style={styles.textContainer}>
           <Text style={styles.title}>Welcome, {name}</Text>
           <Text style={styles.subtitle}>{subtitle}</Text>
-          <Text style={styles.subtitle}>₦46,000</Text>
+          <Text style={styles.subtitle}>₦{balance}</Text>
         </View>
 
         <View>
+            <Pressable onPress={onPressTransfers}>
+            <Text style ={styles.transferText}  selectable={false}>
+                Transfer 
+                <FontAwesome name='arrow-right' style={styles.icons} />
+            </Text>
+            </Pressable>
 
-        <Text style ={styles.transferText}>
-            Transfer 
-            <FontAwesome name='arrow-right' style={styles.icons} />
-        </Text>
-        <Text style ={styles.transferText}>
-            See History
-        </Text>
+            <Pressable onPress={onPressSeeHistory}>
+            <Text style ={styles.transferHistoryText}>
+                See History
+                <FontAwesome name='arrow-right' style={styles.icons} />
+            </Text>
+            </Pressable>
         </View>
         
       </View>
@@ -69,15 +76,23 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: 14,
     color:'#fff',
+    marginTop:5,
   },
   transferText:{
     color:'#fff',
+    fontSize:15,
+    padding:5,
+    margin:3,
+  },
+  transferHistoryText:{
+    color:'#fff',
+    fontSize:15,
     padding:5,
     margin:3,
   },
   icons:{
     fontSize:10,
     padding:10,
-    margin:5,
+    // marginRight:15,
   }
 });
