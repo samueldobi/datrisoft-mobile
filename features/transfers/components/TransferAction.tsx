@@ -3,7 +3,7 @@ import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 
 export default function TransferAction({ icon, label }: { icon: any; label: string }) {
   return (
-    <Pressable style={styles.actionBox}>
+    <Pressable style={styles.actionBox} >
       <FontAwesome5 name={icon} size={22} color="#1dcf7c" />
       <Text style={styles.actionLabel}>{label}</Text>
     </Pressable>

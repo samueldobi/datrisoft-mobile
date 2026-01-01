@@ -21,13 +21,17 @@ export default function  AccountInput(){
             }
         }}
     />
+    
   );
 };
 
 const styles = StyleSheet.create({
-    inputBox:{
-        backgroundColor:'fff',
-        padding:10,
-        marginVertical:10,
-    }
+    inputBox: {
+    borderWidth: 1,
+    borderColor: '#e0e0e0',
+    borderRadius: 12,
+    padding: 16,
+    backgroundColor: '#fafafa',
+    marginBottom: 24,
+  },
 })

@@ -16,7 +16,7 @@ export default function HomeScreen(){
             <WelcomeCard 
             name="Iyke"
             subtitle="Available Balance:"
-            balance={47000}
+            balance={470000}
             onPressTransfers={()=>router.push('/transfers')}
             onPressSeeHistory={()=>console.log('See  History')}
             />
