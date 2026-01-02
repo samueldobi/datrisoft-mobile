@@ -1,8 +1,13 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Image } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView, TextInput } from 'react-native';
+import { useLocalSearchParams } from 'expo-router';
 
-export default function ConfirmTransferScreen({ route, navigation }) {
-  const { selectedBank, recipientName, accountNumber, amount, remark } = route.params || {};
+export default function ConfirmTransferScreen() {
+  const params = useLocalSearchParams();
+    const [text, onChangeText] = React.useState('Useless Text');
+  const [number, onChangeNumber] = React.useState('');
+  const [remark, onChangeRemark] = React.useState('');
+
 
   const handleSendMoney = () => {
     // Handle money transfer logic here
@@ -20,7 +25,7 @@ export default function ConfirmTransferScreen({ route, navigation }) {
         <View style={styles.detailCard}>
           <View style={styles.recipientHeader}>
             <Text style={styles.recipientName}>
-              {recipientName || 'John Doe'}
+              {/* {recipientName || 'John Doe'} */}
             </Text>
           </View>
           
@@ -32,10 +37,10 @@ export default function ConfirmTransferScreen({ route, navigation }) {
             
             <View style={styles.bankDetails}>
               <Text style={styles.bankNameText}>
-                {selectedBank?.name || 'Bank Name'}
+                {/* {selectedBank?.name || 'Bank Name'} */}
               </Text>
               <Text style={styles.accountNumber}>
-                {accountNumber || '0123456789'}
+                {/* {accountNumber || '0123456789'} */}
               </Text>
             </View>
           </View>
@@ -45,9 +50,16 @@ export default function ConfirmTransferScreen({ route, navigation }) {
         <View style={styles.infoBlock}>
           <Text style={styles.blockLabel}>Amount</Text>
           <View style={styles.blockContent}>
-            <Text style={styles.amountText}>
-              ₦ {amount ? parseFloat(amount).toLocaleString('en-NG', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : '0.00'}
-            </Text>
+            {/* <Text style={styles.amountText}> */}
+              {/* ₦ {amount ? parseFloat(amount).toLocaleString('en-NG', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : '0.00'} */}
+            {/* </Text> */}
+             <TextInput
+            // style={styles.input}
+            onChangeText={onChangeNumber}
+            value={number}
+            placeholder="type amount"
+            keyboardType="numeric"
+            />
           </View>
         </View>
 
@@ -55,9 +67,15 @@ export default function ConfirmTransferScreen({ route, navigation }) {
         <View style={styles.infoBlock}>
           <Text style={styles.blockLabel}>Remark</Text>
           <View style={styles.blockContent}>
-            <Text style={styles.remarkText}>
-              {remark || 'No remark'}
-            </Text>
+            {/* <Text style={styles.remarkText}> */}
+              {/* {remark || 'No remark'} */}
+            {/* </Text> */}
+              <TextInput
+                onChangeText={onChangeRemark}
+                value={remark}
+                placeholder="type amount"
+                keyboardType="default"
+              />
           </View>
         </View>
 

@@ -18,7 +18,7 @@ export default function HomeScreen(){
             subtitle="Available Balance:"
             balance={470000}
             onPressTransfers={()=>router.push('/transfers')}
-            onPressSeeHistory={()=>console.log('See  History')}
+            onPressSeeHistory={()=>router.push('/transfers/confirmTransfer')}
             />
           </View> 
 

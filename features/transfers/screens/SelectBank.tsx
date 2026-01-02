@@ -1,5 +1,7 @@
 import { View, Text, StyleSheet, TouchableOpacity,ScrollView } from "react-native";
-export default function SelectBankUi({onNext}){
+import { useRouter } from "expo-router";
+export default function SelectBankUi(){
+  const router = useRouter();
     const banks = [
     { id: 1, name: 'First Bank', logo: '🏦' },
     { id: 2, name: 'GT Bank', logo: '🏛️' },
@@ -18,7 +20,7 @@ export default function SelectBankUi({onNext}){
           <TouchableOpacity
             key={bank.id}
             style={styles.bankItem}
-            onPress={() => onNext(bank)}
+            onPress={() => router.push('/transfers/confirmTransfer')}
           >
             <Text style={styles.bankLogo}>{bank.logo}</Text>
             <Text style={styles.bankName}>{bank.name}</Text>
