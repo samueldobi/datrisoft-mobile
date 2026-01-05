@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View, Platform } from 'react-native';
 import AccountInput from '../components/AccountNumberInput';
 import { useRouter } from "expo-router";
 
@@ -36,17 +36,21 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#ffffff',
   },
-  header: {
-    backgroundColor: '#1dcf7c',
-    paddingTop: 60,
-    paddingBottom: 24,
-    paddingHorizontal: 20,
-  },
-  headerTitle: {
-    fontSize: 28,
-    fontWeight: '700',
-    color: '#ffffff',
-  },
+header: {
+  paddingTop: Platform.OS === 'ios' ? 20 : 22,
+  paddingBottom: 20,
+  paddingHorizontal: 20,
+  backgroundColor: '#ffffff',
+  borderBottomWidth: 1,
+  borderBottomColor: '#eef1f4',
+},
+
+headerTitle: {
+  fontSize: 20,
+  fontWeight: '600',
+  color: '#0f172a',
+  letterSpacing: -0.2,
+},
   content: {
     flex: 1,
     padding: 20,
