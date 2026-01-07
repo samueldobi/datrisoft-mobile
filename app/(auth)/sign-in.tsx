@@ -14,11 +14,18 @@ export default function Signup(){
 
     const submit= async ()=>{
         try{
+            console.log("Submitting login form:", form);
             const res = await axios.post(`${API_URL}/signin`, form);
-            console.log('login response', res)
-             await login(res.data.user)
-        }catch(err){
-            console.log(err)
+            console.log('login response', res.data)
+             await login(res.data)
+             console.log('Login complete');
+        }catch(err:any){
+             if (err.response) {
+                    console.error("Backend response:", err.response.data);
+                    console.error("Status code:", err.response.status);
+                } else {
+                    console.error("Network or other error:", err.message);
+  }
         }
     }
     return(
@@ -31,7 +38,9 @@ export default function Signup(){
                 placeholder="Email"
                 style={styles.input}
                 value={form.email}
-                onChangeText={(t) => setForm({ ...form, email: t })}
+                onChangeText={(t) => setForm({ ...form, email: t.trim() })}
+                keyboardType="email-address"
+                autoCapitalize="none"
                 />
 
                 <TextInput

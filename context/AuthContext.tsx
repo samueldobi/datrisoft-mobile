@@ -9,8 +9,9 @@ interface AuthContextTypes{
 export const AuthContext = createContext<AuthContextTypes | undefined>(undefined);
 export const AuthProvider=({children}: PropsWithChildren)=>{
     const [user, setUser] = useState(null);
-    const login = async (user:any)=>{
-        setUser(user);
+    const login = async (userData:any)=>{
+        console.log('Setting user:', userData);
+        setUser(userData);
     };
     const logout = async ()=>{
         setUser(null);

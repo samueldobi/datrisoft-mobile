@@ -59,22 +59,23 @@ function RootLayoutNav() {
   const {user} = useAuth();
   const segments = useSegments();
   const router = useRouter();
+    console.log('Current user:', user);
+  console.log('Current segments:', segments);
   useEffect(()=>{
-    if(!user){
-      router.replace('/(auth)/sign-in')
-    }else{
-      router.replace('/(tabs)');
-    }
-  })
+    console.log('User changed:', user); 
+      // if (user === undefined) return;
+      if(!user){
+        router.replace('/(auth)/sign-in')
+      }else{
+        router.replace('/(tabs)');
+      }
+  },[user])
  
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack screenOptions={{headerShown:false}}>
-        {user ? (<Stack.Screen name="(tabs)" options={{ headerShown: false }} />):
-
-        <Stack.Screen name="(auth)" options={{ headerShown: false  }} />
-        }
-        
+        <Stack.Screen name="(tabs)" />
+        <Stack.Screen name="(auth)" />
       </Stack>
     </ThemeProvider>
   );
