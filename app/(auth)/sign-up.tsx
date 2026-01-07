@@ -1,14 +1,4 @@
-import { Text,
-        View,
-        StyleSheet,
-        TouchableOpacity,
-        TextInput,
-        ActivityIndicator,
-        Image,
-        KeyboardAvoidingView ,
-        Pressable,
-        Button
-    } from "react-native";
+import { Text,View, StyleSheet,TouchableOpacity,TextInput, ActivityIndicator,KeyboardAvoidingView ,Pressable, Button} from "react-native";
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAuth } from "@/context/AuthContext";
 import { useState } from "react";
@@ -42,14 +32,8 @@ export default function Signup(){
     }
     return(
         <SafeAreaView style={styles.screen} >
-           <View style={styles.brandContainer}>
-            <View style={styles.logoCircle}>
-                <Image source={require("../../assets/images/logo.jpg")} 
-                style={{ width: 70, height: 70, resizeMode: "contain" }}/>
-            </View>
-
-            <Text style={styles.brandName}>Datrisoft</Text>
-            <Text style={styles.brandTag}>Banking</Text>
+            <View>
+                <Text>Datrisoft Banking</Text>
             </View>
             <View style={styles.card}>
                 <Text style={styles.title}>Login</Text>
@@ -106,39 +90,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
   },
 
-   brandContainer: {
-    alignItems: "center",
-    marginBottom: 32,
-  },
-  logoCircle: {
-    // width: 64,
-    // height: 64,
-    // borderRadius: 32,
-    // backgroundColor: "#1dcf7c",
-    alignItems: "center",
-    justifyContent: "center",
-    marginBottom: 10,
-  },
-
-  logoText: {
-    color: "#fff",
-    fontSize: 30,
-    fontWeight: "700",
-  },
-
-  brandName: {
-    fontSize: 22,
-    fontWeight: "700",
-    color: "#111",
-    letterSpacing: 0.3,
-  },
-
-  brandTag: {
-    fontSize: 14,
-    color: "#777",
-    marginTop: 2,
-    letterSpacing: 0.5,
-  },
   card: {
     backgroundColor: "#FFFFFF",
     borderRadius: 24,
