@@ -11,7 +11,7 @@ const FundAccountButton = ({ onPress }) => {
         <View style={styles.iconCircle}>
           <Text style={styles.plusIcon}>+</Text>
         </View>
-        <Text style={styles.fundButtonText}>Fund Account</Text>
+        <Text style={styles.fundButtonText}>Create Account</Text>
       </View>
     </TouchableOpacity>
   );
@@ -38,7 +38,7 @@ export const  FundAccounts =()=>{
     const router = useRouter();
     return(
         <View style = {styles.container}>
-        <FundAccountButton onPress={()=>{console.log('hi')}}/>
+        <FundAccountButton onPress={()=>{router.push('/accounts/create-account')}}/>
         <TransferShortcut onPress={()=>router.push('/transfers')}/>
         </View>
     );
