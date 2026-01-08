@@ -67,96 +67,102 @@ export default function WelcomeCard({
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: '#1dcf7c',
-    padding: 16,
+    borderRadius: 20,
+    overflow: 'hidden',
+    elevation: 4,
+    shadowColor: '#D73535',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.2,
+    shadowRadius: 8,
     margin: 16,
-    borderRadius: 12,
-    elevation: 4, 
-    shadowColor: '#000', 
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
+    backgroundColor: '#D73535',
   },
+
   row: {
     flexDirection: 'row',
     alignItems: 'center',
+    padding: 20,
   },
+
   textContainer: {
     flex: 1,
   },
-  title: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 4,
-    color:'#fff',
-  },
+
   subtitle: {
-    fontSize: 18,
-    color:'#fff',
-    marginVertical:5,
+    fontSize: 14,
+    color: '#FFFFFF',
+    opacity: 0.85,
+    marginBottom: 6,
   },
+
   balanceText: {
-    fontSize: 24,
-    color:'#fff',
-    marginVertical:5,
-  },
-  transferText:{
-    color:'#fff',
-    fontSize:18,
-    padding:5,
-    margin:3,
-  },
-  transferHistoryText:{
-    color:'#fff',
-    fontSize:15,
-    padding:5,
-    margin:3,
-  },
-  icons:{
-    fontSize:10,
-    padding:10,
+    fontSize: 28,
+    fontWeight: '700',
+    color: '#FFFFFF',
   },
 
+  transferText: {
+    color: '#FFFFFF',
+    fontSize: 14,
+    fontWeight: '600',
+    paddingVertical: 4,
+    opacity: 0.9,
+  },
 
-  // card container for welcome name
-   welcomeBox: {
+  transferHistoryText: {
+    color: '#FFFFFF',
+    fontSize: 12,
+    opacity: 0.7,
+    marginTop: 4,
+  },
+
+  icons: {
+    fontSize: 10,
+    marginLeft: 6,
+  },
+
+  // welcome header
+  welcomeBox: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginVertical: 16,
-    paddingLeft:10,
-    paddingRight:10,
+    alignItems: 'center',
+    marginHorizontal: 16,
+    marginBottom: 6,
   },
+
+  welcomeTextTop: {
+    fontSize: 18,
+    fontWeight: '600',
+    color: '#111827',
+  },
+
   avatarCircle: {
     width: 36,
     height: 36,
     borderRadius: 18,
-    backgroundColor: '#1dcf7c',
+    backgroundColor: '#D73535',
     alignItems: 'center',
     justifyContent: 'center',
-    marginRight: 10,
   },
+
   avatar: {
     width: 36,
     height: 36,
     borderRadius: 18,
-    marginRight: 10,
   },
+
   placeholder: {
     width: 36,
     height: 36,
     borderRadius: 18,
-    backgroundColor: '#1dcf7c',
+    backgroundColor: '#D73535',
     alignItems: 'center',
     justifyContent: 'center',
-    marginRight: 10,
   },
+
   placeholderText: {
-    color: 'white',
+    color: '#FFFFFF',
     fontWeight: '600',
   },
-  welcomeTextTop: {
-    fontSize: 20,
-    fontWeight: '500',
-    color: '#111827',
-  },
 });
+
