@@ -72,7 +72,7 @@ export function TransferScreen() {
               title="Single Transfer"
               description="Send money to one recipient at a time"
               badge="QUICK"
-              onPress={() => router.push('/transfers/single')}
+              onPress={() => router.push('/transfers/single-transfer')}
             />
 
             <TransferOptionCard
@@ -80,7 +80,7 @@ export function TransferScreen() {
               title="Bulk Transfer"
               description="Send money to multiple recipients at once"
               badge="SAVE TIME"
-              onPress={() => router.push('/transfers/bulk')}
+              onPress={() => router.push('/transfers/bulk-transfer')}
             />
           </View>
 

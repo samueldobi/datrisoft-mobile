@@ -4,7 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import AccountInput from '../components/AccountNumberInput';
 import { useRouter } from "expo-router";
 
-export default function TransferScreen() {
+export default function SingleTransferScreen() {
   const router = useRouter();
   
   return (
