@@ -51,7 +51,7 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="transfers"
+        name="transfers/index"
         options={{
           title: 'Transfers',
           tabBarIcon: ({ color }) => <TabBarIcon name="arrow-right" color={color} />,
