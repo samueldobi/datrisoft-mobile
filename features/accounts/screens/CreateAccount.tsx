@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Platform } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useRouter } from 'expo-router';
+
 
 // Header Component
 export const CreateAccountHeader = () => {
@@ -110,7 +112,7 @@ export const InfoCard = () => {
   return (
     <View style={styles.infoCard}>
       <View style={styles.infoIconContainer}>
-        <Text style={styles.infoIcon}>ℹ</Text>
+        <Text style={styles.infoIcon}>i</Text>
       </View>
       <View style={styles.infoContent}>
         <Text style={styles.infoTitle}>Account Benefits</Text>
@@ -148,13 +150,15 @@ export const CreateAccountButton = ({ onPress, disabled = false }) => {
 export default function CreateAccountScreen() {
   const [selectedAccountType, setSelectedAccountType] = useState('');
   const [selectedCurrency, setSelectedCurrency] = useState('');
+  const router = useRouter();
 
   const handleCreateAccount = () => {
     console.log('Creating account:', {
       accountType: selectedAccountType,
       currency: selectedCurrency,
     });
-    // API call logic here
+    router.push('/accounts/confirm-account');
+    
   };
 
   const isFormValid = selectedAccountType && selectedCurrency;
