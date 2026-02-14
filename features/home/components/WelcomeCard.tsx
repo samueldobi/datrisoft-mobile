@@ -74,7 +74,9 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.2,
     shadowRadius: 8,
-    margin: 16,
+    paddingRight: 10,
+    marginRight:10,
+    marginVertical:10,
     backgroundColor: '#D73535',
   },
 
@@ -126,7 +128,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginHorizontal: 16,
+    marginHorizontal: 10,
     marginBottom: 6,
   },
 

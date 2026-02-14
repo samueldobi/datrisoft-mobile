@@ -11,7 +11,7 @@ import { useRouter } from "expo-router";
 export default function HomeScreen(){
     const router = useRouter();
     return(
-         <SafeAreaView  edges={['left', 'right',]} style ={{paddingLeft: 5, paddingTop: 10,}}>
+         <SafeAreaView  edges={['left', 'right',]} style ={{paddingLeft: 10, paddingTop: 10,}}>
            <FlatList
             showsVerticalScrollIndicator={false}
              data={[]}              

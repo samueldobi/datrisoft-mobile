@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: '600',
     color: '#1F2937',
-    marginBottom: 16,
+    marginVertical: 5,
     padding:10,
   },
   accountType: {
