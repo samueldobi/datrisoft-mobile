@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
+
 type PersonalDataProps ={
   fullName:string,
   phoneNumber:string,
@@ -10,7 +11,7 @@ type PersonalDataProps ={
 const PersonalDataSection = ({ fullName, phoneNumber, email }:PersonalDataProps) => {
   return (
     <View style={styles.container}>
-      <View style = {{flexDirection:"row", alignItems: "center", gap:8}}>
+      <View style = {{flexDirection:"row", alignItems: "center", gap:8, marginTop:10}}>
         <Ionicons name="person" size={24} color="#D73535" />
         <Text style={styles.sectionTitle}>Personal Data</Text>
       </View>
@@ -48,7 +49,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: '600',
     color: '#1A1A1A',
-    marginBottom: 15,
   },
   item: {
     paddingVertical: 12,
