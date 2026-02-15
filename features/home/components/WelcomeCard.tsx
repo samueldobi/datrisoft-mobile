@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet,Pressable,Image } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
+import { useRouter } from "expo-router";
 
 type WelcomeCardProps = {
   name: string;
@@ -19,14 +20,15 @@ export default function WelcomeCard({
   onPressTransfers,
   onPressSeeHistory,
 }: WelcomeCardProps) {
+  const router = useRouter();
   return (
     <View>
 
    <View style={styles.welcomeBox}>
       <Text style={styles.welcomeTextTop}>Welcome, {name}</Text>
-      <View style={styles.avatarCircle}>
+      <Pressable style={styles.avatarCircle} onPress={()=>router.push('/profile')}>
         <FontAwesome name= 'user-plus' size={20} color="#fff" />
-      </View>
+      </Pressable>
       
     
     </View>

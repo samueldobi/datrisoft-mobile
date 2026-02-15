@@ -52,7 +52,7 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="transfers/index"
+        name="transfers"
         options={{
           title: 'Transfers',
           tabBarIcon: ({ color }) => <FontAwesome6 name="money-bill-transfer" size={24} color={color} />,
@@ -62,7 +62,7 @@ export default function TabLayout() {
         name="wallet"
         options={{
           title: 'Wallet',
-          tabBarIcon: ({ color }) => <Entypo name="wallet" size={24} color={color} />,
+          tabBarIcon: ({ color }) => <Entypo name="wallet" size={24} color= {color} />,
         }}
       />
     </Tabs>
