@@ -20,7 +20,6 @@
 //         </>
 //     )
 // }
-import React from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import ProfileHeader from '../components/ProfileHeader';
@@ -31,7 +30,7 @@ import LogoutButton from '../components/LogoutButton';
 
 const ProfileScreen = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaView  edges={['left', 'top', 'right',]} style ={{  flex: 1, paddingLeft: 10, paddingTop: 10,}}>
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <ProfileHeader 
         name="John Doe"
