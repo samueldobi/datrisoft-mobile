@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, Switch, TouchableOpacity } from 'react-native';
+import SimpleLineIcons from '@expo/vector-icons/SimpleLineIcons';
 
 const SettingsSection = () => {
   const [hideBalance, setHideBalance] = useState(false);
@@ -8,7 +9,10 @@ const SettingsSection = () => {
 
   return (
     <View style={styles.container}>
+      <View style = {{flexDirection:"row", alignItems: "center", gap:8, marginTop:10}}>
+        <SimpleLineIcons name="settings" size={24} color="#D73535" />
       <Text style={styles.sectionTitle}>Settings</Text>
+      </View>
       
       <View style={styles.item}>
         <Text style={styles.label}>Hide Balance</Text>
@@ -58,7 +62,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '600',
     color: '#1A1A1A',
-    marginBottom: 15,
   },
   item: {
     flexDirection: 'row',

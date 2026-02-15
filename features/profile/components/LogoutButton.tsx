@@ -1,5 +1,6 @@
 import React from 'react';
-import { TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { TouchableOpacity, Text, StyleSheet,View } from 'react-native';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 const LogoutButton = () => {
   const handleLogout = () => {
@@ -9,7 +10,10 @@ const LogoutButton = () => {
 
   return (
     <TouchableOpacity style={styles.container} onPress={handleLogout}>
+      <View style = {{flexDirection:"row", alignItems: "center", gap:8, marginTop:10}}>
       <Text style={styles.text}>Logout</Text>
+        <MaterialIcons name="logout" size={24} color="#D73535" />
+      </View>
     </TouchableOpacity>
   );
 };
@@ -25,7 +29,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 16,
-    color: '#FF3B30',
+    color: '#D73535',
     fontWeight: '600',
   },
 });

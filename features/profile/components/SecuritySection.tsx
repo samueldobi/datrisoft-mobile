@@ -1,10 +1,14 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 const SecuritySection = () => {
   return (
     <View style={styles.container}>
+      <View style = {{flexDirection:"row", alignItems: "center", gap:8, marginTop:10}}>
+        <MaterialIcons name="security" size={24} color="#D73535" />
       <Text style={styles.sectionTitle}>Security</Text>
+      </View>
       
       <TouchableOpacity style={styles.item}>
         <Text style={styles.label}>Change Password</Text>
@@ -39,7 +43,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '600',
     color: '#1A1A1A',
-    marginBottom: 15,
   },
   item: {
     flexDirection: 'row',
