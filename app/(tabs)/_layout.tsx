@@ -1,11 +1,12 @@
 import React from 'react';
-import FontAwesome from '@expo/vector-icons/FontAwesome';
+// import FontAwesome from '@expo/vector-icons/FontAwesome';
+// import Entypo from '@expo/vector-icons/Entypo';
 import { Link, Tabs } from 'expo-router';
 import { Pressable } from 'react-native';
 import Colors from '@/constants/Colors';
 import { useColorScheme } from '@/components/useColorScheme';
 import { useClientOnlyValue } from '@/components/useClientOnlyValue';
-import { FontAwesome5 } from '@expo/vector-icons';
+import { FontAwesome, FontAwesome5, FontAwesome6, Entypo,  } from '@expo/vector-icons';
 
 
 function TabBarIcon(props: {
@@ -54,14 +55,14 @@ export default function TabLayout() {
         name="transfers/index"
         options={{
           title: 'Transfers',
-          tabBarIcon: ({ color }) => <TabBarIcon name="arrow-right" color={color} />,
+          tabBarIcon: ({ color }) => <FontAwesome6 name="money-bill-transfer" size={24} color={color} />,
         }}
       />
       <Tabs.Screen
-        name="accounts"
+        name="wallet"
         options={{
-          title: 'accounts',
-          tabBarIcon: ({ color }) => <TabBarIcon name="arrow-right" color={color} />,
+          title: 'Wallet',
+          tabBarIcon: ({ color }) => <Entypo name="wallet" size={24} color={color} />,
         }}
       />
     </Tabs>
